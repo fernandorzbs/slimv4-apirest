@@ -32,7 +32,7 @@ Colección en postman está lista con todos los endpoints.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5285489-5d6ecca3-9d3b-44e6-a19e-0e59816bc6a2?action=collection%2Ffork&collection-url=entityId%3D5285489-5d6ecca3-9d3b-44e6-a19e-0e59816bc6a2%26entityType%3Dcollection%26workspaceId%3D920bcb4c-e64f-4f24-9696-eaae2a461673)
 
-## :neckbeard: DOCUMENTACIÓN:
+## :floppy_disk: DOCUMENTACIÓN:
 
 ### ENDPOINTS:
 

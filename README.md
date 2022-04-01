@@ -21,7 +21,7 @@ En su terminal ejecute estos comandos:
 $ git clone https://github.com/fernandorzbs/slimv4-apirest && cd slimv4-apirest
 $ cp .env.example .env
 $ composer install
-$ composer init-db
+$ composer init-database
 $ composer start
 ```
 

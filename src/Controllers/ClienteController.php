@@ -137,10 +137,14 @@ class ClienteController{
                 // VALIDAR CORREO
                 //------------------------------------
                 (isset($firstname)) ? $updateRow->bindParam(':firstname' , $firstname) : $updateRow->bindParam(':firstname' , $findRow->fetch(PDO::FETCH_OBJ)->firstname);
-                (isset($lastname)) ? $updateRow->bindParam(':lastname' , $lastname) : $updateRow->bindParam(':lastname' , $findRow->fetch(PDO::FETCH_OBJ)->firstname);
+                (isset($lastname)) ? $updateRow->bindParam(':lastname' , $lastname) : $updateRow->bindParam(':lastname' , $findRow->fetch(PDO::FETCH_OBJ)->lastname);
                 (isset($email)) ? $updateRow->bindParam(':email' , $email) : $updateRow->bindParam(':email' , $findRow->fetch(PDO::FETCH_OBJ)->email);
                 (isset($status)) ? $updateRow->bindParam(':status' , $status) : $updateRow->bindParam(':status' , $findRow->fetch(PDO::FETCH_OBJ)->status);
                 $updateRow->execute();
+
+                $code           = 200;
+                $bodyStatus     = "success";
+                $message        = "Datos del cliente con ID ${idclient} actualizado";
             }else{
                 $code           = 200;
                 $bodyStatus     = "error";

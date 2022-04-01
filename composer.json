@@ -30,6 +30,6 @@
     },
     "scripts": {
         "start": "php -S localhost:3000 -t public",
-        "database" : "php extras/init-db.php"
+        "init-database" : "php src/extras/initdb.php"
     }
 }

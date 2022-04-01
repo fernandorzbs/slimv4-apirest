@@ -9,6 +9,7 @@ class HomeController{
         $body = [
             "code"          => 200,
             "status"        => "success",
+            "documentación" => "https://github.com/fernandorzbs/slimv4-apirest",
             "endpoints"     => [
                 "clientes"  => $_SERVER['APP_DOMAIN'].$_SERVER['APP_PORT']."/clientes"
             ]

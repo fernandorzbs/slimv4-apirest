@@ -145,7 +145,7 @@ class ClienteController{
                         // PREGUNTAMOS SI YA EXISTE EL $EMAIL EN LA DB
                         //---------------------------------------------
                         if($email != $findRow->fetch(PDO::FETCH_OBJ)->email){
-                            (isset($email)) ? $updateRow->bindParam(':email' , $email) : $updateRow->bindParam(':email' , $findRow->fetch(PDO::FETCH_OBJ)->email);
+                            
                             
                         }else{
                             $code       = 400;
@@ -158,6 +158,8 @@ class ClienteController{
                         $message    = "Formato de correo no válido";
                     }
                 }
+                
+                (isset($email)) ? $updateRow->bindParam(':email' , $email) : $updateRow->bindParam(':email' , $findRow->fetch(PDO::FETCH_OBJ)->email);
                 (isset($firstname)) ? $updateRow->bindParam(':firstname' , $firstname) : $updateRow->bindParam(':firstname' , $findRow->fetch(PDO::FETCH_OBJ)->firstname);
                 (isset($lastname)) ? $updateRow->bindParam(':lastname' , $lastname) : $updateRow->bindParam(':lastname' , $findRow->fetch(PDO::FETCH_OBJ)->firstname);
                 (isset($status)) ? $updateRow->bindParam(':status' , $status) : $updateRow->bindParam(':status' , $findRow->fetch(PDO::FETCH_OBJ)->status);

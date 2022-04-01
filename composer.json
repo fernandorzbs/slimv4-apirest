@@ -1,0 +1,35 @@
+{
+    "name": "slimv4/apirest",
+    "description": "API REST con el framework slim v4",
+    "keywords": [
+        "rest",
+        "router",
+        "psr7",
+        "api"
+    ],
+    "homepage": "https://github.com/fernandorzbs/slimv4-apirest",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Rz",
+            "email": "hola@fernandorz.com",
+            "homepage": "https://fernandorz.com/"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.5",
+        "selective/basepath": "^2.1",
+        "vlucas/phpdotenv": "^5.4",
+        "firebase/php-jwt": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:3000 -t public",
+        "database" : "php extras/init-db.php"
+    }
+}

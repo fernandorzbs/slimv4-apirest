@@ -134,34 +134,11 @@ class ClienteController{
             if($findRow->rowCount() > 0){
                 $updateRow = $conn->prepare($queryUpdate);
                 //------------------------------------
-                // VALIDAMOS EL $EMAIL
+                // VALIDAR CORREO
                 //------------------------------------
-                if(isset($email)){
-                    //------------------------------------
-                    // VALIDAMOS LA ESTRUCTURA DE $EMAIL
-                    //------------------------------------
-                    if(filter_var($email, FILTER_VALIDATE_EMAIL, FILTER_FLAG_EMAIL_UNICODE)) {
-                        //---------------------------------------------
-                        // PREGUNTAMOS SI YA EXISTE EL $EMAIL EN LA DB
-                        //---------------------------------------------
-                        if($email != $findRow->fetch(PDO::FETCH_OBJ)->email){
-                            
-                            
-                        }else{
-                            $code       = 400;
-                            $bodyStatus = "error";
-                            $message    = "correo ya existe";
-                        }
-                    }else{
-                        $code       = 400;
-                        $bodyStatus = "error";
-                        $message    = "Formato de correo no válido";
-                    }
-                }
-                
-                (isset($email)) ? $updateRow->bindParam(':email' , $email) : $updateRow->bindParam(':email' , $findRow->fetch(PDO::FETCH_OBJ)->email);
                 (isset($firstname)) ? $updateRow->bindParam(':firstname' , $firstname) : $updateRow->bindParam(':firstname' , $findRow->fetch(PDO::FETCH_OBJ)->firstname);
                 (isset($lastname)) ? $updateRow->bindParam(':lastname' , $lastname) : $updateRow->bindParam(':lastname' , $findRow->fetch(PDO::FETCH_OBJ)->firstname);
+                (isset($email)) ? $updateRow->bindParam(':email' , $email) : $updateRow->bindParam(':email' , $findRow->fetch(PDO::FETCH_OBJ)->email);
                 (isset($status)) ? $updateRow->bindParam(':status' , $status) : $updateRow->bindParam(':status' , $findRow->fetch(PDO::FETCH_OBJ)->status);
                 $updateRow->execute();
             }else{
